@@ -3,9 +3,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class Client {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String host = "127.0.0.1";
         int port = 8085;
 
@@ -15,6 +16,8 @@ public class Client {
             out.println("Olga");
             String resp = in.readLine();
             System.out.println(resp);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
